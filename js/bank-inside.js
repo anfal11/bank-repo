@@ -12,7 +12,13 @@ const withdrawBtn = document.getElementById("btn-withdraw");
 
 // deposit button event handler
 depositBtn.addEventListener("click", function () {
-  const userDepositAmount = parseFloat(userDeposit.value);
+  const userDepositString = userDeposit.value;
+  const userDepositAmount = parseFloat(userDepositString);
+  userDeposit.value = "";
+  if (isNaN(userDepositAmount) || !userDepositAmount) {
+    alert("Please enter a valid amount!");
+    return;
+  }
   const previousDepositAmount = parseFloat(previousDeposit.innerText);
   const totalDeposit = userDepositAmount + previousDepositAmount;
   previousDeposit.innerText = totalDeposit;
@@ -20,20 +26,24 @@ depositBtn.addEventListener("click", function () {
   const previousTotalBalance = parseFloat(totalBalance.innerText);
   const totalBalanceAmount = userDepositAmount + previousTotalBalance;
   totalBalance.innerText = totalBalanceAmount;
-
-  userDeposit.value = "";
 });
 
 // withdraw button event handler
 withdrawBtn.addEventListener("click", function () {
   const userWithdrawString = userWithdraw.value;
   const userWithdrawAmount = parseFloat(userWithdrawString);
+  userWithdraw.value = "";
+    if (isNaN(userWithdrawAmount) || !userWithdrawString) {
+    alert("Please enter a valid amount!");
+    return;
+    }
 
   const previousWithdrawString = previousWithdraw.innerText;
   const previousWithdrawAmount = parseFloat(previousWithdrawString);
 
   const previousTotalBalance = parseFloat(totalBalance.innerText);
 
+  
   if (userWithdrawAmount > previousTotalBalance) {
     alert("You have insufficient balance!");
     return;
@@ -44,6 +54,4 @@ withdrawBtn.addEventListener("click", function () {
 
   const totalBalanceAmount = previousTotalBalance - userWithdrawAmount;
   totalBalance.innerText = totalBalanceAmount;
-
-  userWithdraw.value = "";
 });
