@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/70349af01a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-xl md:text-5xl text-center mt-10"> Welcome to <span class="font-semibold text-blue-600">ATM Bank
+                💰🤑</span></h1>
+    </header>
+
+    <main>
+        <section class="bg-blue-400 p-10 w-3/4 mx-auto mt-16 rounded-xl">
+            <h1 class="text-white text-xl md:text-5xl my-10">Please Log in here</h1>
+            <div class=" mb-10">
+                <input id="user-input" class="block border border-zinc-600 w-3/4 outline-none p-2 mb-2" type="email"
+                    placeholder="your email">
+
+                <input id="user-password" class="border border-zinc-600 w-3/4 outline-none p-2 mb-3" type="password"
+                    placeholder="your password">
+                <span id="togglePassword" class="toggle-password">
+                    <i class="fa-regular fa-eye relative right-8"></i>
+                </span>
+
+
+                <button id="btn-submit"
+                    class="block bg-teal-700 px-6 py-2 text-white text-xl rounded-xl hover:bg-teal-500">
+                    Submit </button>
+            </div>
+
+        </section>
+    </main>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
